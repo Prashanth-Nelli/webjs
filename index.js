@@ -1,14 +1,5 @@
-var http = require('http')
-    ,app = exports = module.exports = {}
-    ,webstack = []
-    ,url = require('url')
-    ,parsedUrl
-    ,path
-    ,qString
-    ,method
-    ,reqHandler
-    ,foundHandler;
-
+var http = require('http'), app = exports = module.exports = {}, webstack = [], url = require('url'), parsedUrl, path, qString, method, reqHandler, foundHandler;
+var str='',parser=require('./parser');
 app.start = function(port, callback) {
 	if (callback) {
 		if ( typeof callback !== 'function') {
@@ -18,7 +9,11 @@ app.start = function(port, callback) {
 	http.createServer(function(req, res) {
 		app.req = req;
 		app.res = res;
-		app.handle(req, res);
+		str='';
+		req.on('data',function(chunck){
+			str+=chunck;
+			app.handle(req, res,str);
+		});		
 	}).listen(port, callback());
 };
 
@@ -54,7 +49,7 @@ app.delete = function(path, callback) {
 	});
 };
 
-app.handle = function(req, res) {
+app.handle = function(req, res,data) {
 	parsedUrl = url.parse(req.url, true);
 	path = parsedUrl.pathname;
 	qString = parsedUrl.query;
@@ -68,6 +63,7 @@ app.handle = function(req, res) {
 			break;
 		}
 	}
+	req['body']=parser.parse(data,req.headers['content-type']);
 	if (foundHandler) {
 		reqHandler.handle(req, res);
 	} else {
