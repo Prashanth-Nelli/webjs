@@ -1,4 +1,13 @@
-var http = require('http'), app = exports = module.exports = {}, webstack = [], url = require('url'), parsedUrl, path, qString, method, reqHandler, foundHandler;
+var http = require('http')
+    ,app = exports = module.exports = {}
+    ,webstack = []
+    ,url = require('url')
+    ,parsedUrl
+    ,path
+    ,qString
+    ,method
+    ,reqHandler
+    ,foundHandler;
 
 app.start = function(port, callback) {
 	if (callback) {
