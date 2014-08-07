@@ -1,7 +1,6 @@
 var parser = exports = module.exports={};
 var querystring=require('querystring');
 
-
 parser.parse=function(data,encoding){
 	switch(encoding){
 		case 'application/json':
