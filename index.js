@@ -31,6 +31,7 @@ app.start = function() {
 };
 
 app.static = function(dir) {
+	app.staticset = true;
 	app.dir = dir;
 	fs.stat(dir, function(err, stat) {
 		if (!stat.isDirectory()) {
@@ -83,15 +84,22 @@ app.handle = function(req, res, data) {
 	var foundHandler = false;
 	var swPath = '';
 	var sPath = '';
-	var isStatic = false;
-	var filename = path.join(app.dir, req.url);
+	var filename = path.join(app.dir || __dirname, req.url);
 	var fileStream;
+	var jobdone = true;
 
-	if (fs.existsSync(filename)) {
-		fileStream = fs.createReadStream(filename);
-		fileStream.pipe(res);
-	} else {
+	try {
+		if (app.staticset && fs.existsSync(filename)) {
+			fileStream = fs.createReadStream(filename);
+			fileStream.pipe(res);
+			jobdone = false;
+		}
+	} catch(Ex) {
+		console.log('Exception raised');
+		jobdone = true;
+	}
 
+	if (jobdone) {
 		for (var i = 0; i < webstack.length; i++) {
 			if (webstack[i].path === pathurl && webstack[i].method === method) {
 
@@ -129,6 +137,7 @@ app.handle = function(req, res, data) {
 			});
 			res.end('<html><head></head><body>Not found on the server</body></html>');
 		}
+
 	}
 
 };
