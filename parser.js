@@ -8,10 +8,10 @@ parser.parse=function(data,encoding){
 			return JSON.parse(data);
 		break;
 		case 'application/x-www-form-urlencoded':
-		return querystring.parse(data);
+			return querystring.parse(data);
 		break;
-		defalut:
-		console.log('');
+		default:
+			return data;
 	}	
 };
 
