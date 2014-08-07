@@ -1,21 +1,13 @@
-var http = require('http');
+var server = require('http');
 var app = exports = module.exports = {};
 var webstack = [];
 var url = require('url');
 var parser = require('./parser');
 var querystring = require('querystring');
 
-app.start = function(port, callback) {
-	if (callback) {
-		if ( typeof callback !== 'function') {
-			throw Error('function Expected but find Something Else')
-		}
-	} else {
-		callback = function() {
-
-		};
-	}
-	http.createServer(function(req, res) {
+app.start = function() {
+	
+	return server.createServer(function(req, res) {
 		app.req = req;
 		app.res = res;
 		str = '';
@@ -31,7 +23,8 @@ app.start = function(port, callback) {
 		req.on('end', function() {
 			app.handle(req, res, str);
 		})
-	}).listen(port, callback());
+	});
+	
 };
 
 app.get = function(path, callback) {
