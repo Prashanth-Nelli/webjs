@@ -1,0 +1,26 @@
+{
+	"author": {
+		"name": "Nelli.Prashanth kumar",
+		"url": "https://github.com/Prashanth-Nelli",
+		"email": "nelli.prashanth1501@gmail.com"
+	},
+	"dependencies": {
+		"mime": "1.2.11"
+	},
+	"description": "leight wight web server for node.js",
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": ""
+		}
+	],
+	"devDependencies": {},
+	"keywords": ["server", "web server", "node server", "server framework"],
+	"main": "index.js",
+	"name": "webjs",
+	"repository": {
+		"url": "https://github.com/Prashanth-Nelli/webjs",
+		"type": "git"
+	},
+	"version": "0.0.1"
+}
