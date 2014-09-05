@@ -4,9 +4,7 @@
 		"url": "https://github.com/Prashanth-Nelli",
 		"email": "nelli.prashanth1501@gmail.com"
 	},
-	"dependencies": {
-		"mime": "1.2.11"
-	},
+	"dependencies": {},
 	"description": "leight wight web server for node.js",
 	"licenses": [
 		{
