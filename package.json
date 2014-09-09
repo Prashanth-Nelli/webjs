@@ -1,4 +1,5 @@
 {
+	"name": "webjs",
 	"author": {
 		"name": "Nelli.Prashanth kumar",
 		"url": "https://github.com/Prashanth-Nelli",
@@ -9,13 +10,12 @@
 	"licenses": [
 		{
 			"type": "MIT",
-			"url": ""
+			"url": "https://github.com/Prashanth-Nelli/webjs/blob/master/LICENSE"
 		}
 	],
 	"devDependencies": {},
 	"keywords": ["server", "web server", "node server", "server framework"],
 	"main": "index.js",
-	"name": "webjs",
 	"repository": {
 		"url": "https://github.com/Prashanth-Nelli/webjs",
 		"type": "git"
