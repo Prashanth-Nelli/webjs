@@ -1,5 +1,5 @@
 {
-	"name": "webjs",
+	"name": "server-js",
 	"author": {
 		"name": "Nelli.Prashanth kumar",
 		"url": "https://github.com/Prashanth-Nelli",
@@ -14,11 +14,11 @@
 		}
 	],
 	"devDependencies": {},
-	"keywords": ["server", "web server", "node server", "server framework"],
+	"keywords": ["server", "web server", "node server", "server framework","api","rest api","node webframework","web"],
 	"main": "index.js",
 	"repository": {
 		"url": "https://github.com/Prashanth-Nelli/webjs",
 		"type": "git"
 	},
-	"version": "0.0.1"
+	"version": "0.1.0"
 }
