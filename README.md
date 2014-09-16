@@ -230,7 +230,7 @@ server.static(__dirname+'/test');
 
 
 server.get('/path', function(req, res) {
-	res.end('path get);
+	res.end('path get');
 })
 
 server.get('/path/:id', function(req, res) {
