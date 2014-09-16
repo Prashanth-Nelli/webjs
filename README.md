@@ -3,6 +3,9 @@ server-js
 
 light weight web framework for node.js
 
+[![NPM Version](https://img.shields.io/npm/v/server-js.svg?style=flat)](https://www.npmjs.org/package/server-js)
+[![Build Status](https://travis-ci.org/Prashanth-Nelli/webjs.svg?branch=master)](https://travis-ci.org/Prashanth-Nelli/webjs)
+
 ###Documentation
 
 installing server-js using npm
