@@ -140,7 +140,9 @@ example:-
   });
     
 ```
-#### req.params
+#### request api
+
+##### req.params
 
 This property is an object containing properties mapped to the named route "parameters".
 For example, if you have the route /user/:name, then the "name" property is available to you as req.params.name.
@@ -167,6 +169,39 @@ u can define path's with parameters like the following
     
     
 ```
+
+#### response api
+
+##### res.send()
+
+you can send strings,objects and buffers using res.send method 
+
+it automatically sets the response content-type header based on the data passed to the method
+
+u can use res.send method in following ways
+
+Examples:-
+
+```javascript
+
+	server.get('route',function(req,res){
+		res.send({data:'response'}); //sending an object
+		//automaticallys sets the header application/json
+	});
+	
+	server.get('route',function(req,res){
+		res.send('data'); //sending an object
+		//automatically sets the header text/html
+	});
+	
+	server.get('route',function(req,res){
+		res.send(new Buffer(3)); //sending an object
+		//automatically sets the header application/octet-stream
+	});
+	
+```
+
+
 
 ####Sample server written using server-js
 
