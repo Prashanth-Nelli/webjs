@@ -1,6 +1,8 @@
 server-js
 =========
 
+[![Join the chat at https://gitter.im/Prashanth-Nelli/webjs](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Prashanth-Nelli/webjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 light weight web framework for node.js
 
 [![NPM Version](https://img.shields.io/npm/v/server-js.svg?style=flat)](https://www.npmjs.org/package/server-js)
